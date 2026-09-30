@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>🎂 晓彤女士生辰快乐 🎂</title>
+<meta name="description" content="热烈欢迎晓彤女士生辰日 · 动物派对生日惊喜 🎂">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;overflow:hidden;}
+body{
+font-family:"ZCOOL KuaiLe","Comic Sans MS","PingFang SC","Microsoft YaHei",sans-serif;
+color:#4a3b52;
+user-select:none;
+/* 治愈系梦幻粉紫渐变背景，稍微加深一点点，更能衬托烟花 */
+background: linear-gradient(135deg, #ffcce0 0%, #d1bfff 50%, #cceeff 100%);
+display: flex; justify-content: center; align-items: center;
+}
+/* ===== 漂浮云朵 ===== */
+.bg-decor {
+position: fixed; inset: 0;
+pointer-events: none; z-index: 1;
+overflow: hidden;
+}
+.cloud {
+position: absolute;
+background: rgba(255,255,255,0.8);
+border-radius: 50%;
+filter: blur(10px);
+animation: floatCloud 25s linear infinite;
+}
+.cloud.c1 { width: 150px; height: 60px; top: 10%; left: -150px; animation-duration: 30s; }
+.cloud.c2 { width: 200px; height: 80px; top: 45%; left: -200px; animation-duration: 40s; animation-
+delay: 5s; }
+.cloud.c3 { width: 120px; height: 50px; top: 75%; left: -120px; animation-duration: 25s; animation-
+delay: 12s; }
+@keyframes floatCloud {
+0% { transform: translateX(0); }
+100% { transform: translateX(calc(100vw + 250px)); }
+}
+/* ===== 可爱动物大集合 ===== */
+.animal {
+position: absolute;
+font-size: clamp(20px, 6vw, 40px);
+z-index: 2;
+filter: drop-shadow(0 6px 10px rgba(0,0,0,0.1));
+animation: floatAnimal 5s ease-in-out infinite;
+pointer-events: none;
+}
+@keyframes floatAnimal {
+0%, 100% { transform: translateY(0) rotate(-8deg); }
+50% { transform: translateY(-20px) rotate(8deg); }
+}
+/* 给每只动物不同的动画延迟和位置，显得错落有致 */
+.a1 { top: 8%; left: 6%; animation-delay: 0s; }
+.a2 { top: 15%; right: 8%; animation-delay: 0.5s; font-size: clamp(28px, 8vw, 50px); }
+.a3 { top: 35%; left: 4%; animation-delay: 1.2s; }
+.a4 { top: 50%; right: 5%; animation-delay: 0.8s; }
+.a5 { bottom: 15%; left: 10%; animation-delay: 1.5s; font-size: clamp(26px, 7vw, 45px); }
+.a6 { bottom: 20%; right: 12%; animation-delay: 0.3s; }
+.a7 { top: 25%; left: 45%; animation-delay: 1.8s; font-size: clamp(18px, 5vw, 32px); }
+.a8 { bottom: 8%; right: 40%; animation-delay: 2.1s; }
+.a9 { top: 60%; left: 20%; animation-delay: 1s; }
+.a10 { top: 5%; right: 30%; animation-delay: 2.5s; font-size: clamp(22px, 6vw, 38px); }
+/* ===== 烟花画布 ===== */
+#fw{
+position:fixed;inset:0;width:100%;height:100%;
+display:block;z-index:3;
+}
+/* ===== 主舞台 ===== */
+.stage{
+position:fixed;inset:0;z-index:4;
+display:flex;flex-direction:column;
+align-items:center;justify-content:center;
+gap:clamp(4px,1.2vh,14px);
+padding:max(3vh,env(safe-area-inset-top)) 5vw max(3vh,env(safe-area-inset-bottom));
+text-align:center;
+pointer-events:none;
+}
+.fade-up{opacity:0;animation:fadeUp .95s cubic-bezier(.22,.9,.3,1) forwards;}
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(24px) scale(.96);}
+to{opacity:1;transform:translateY(0) scale(1);}
+}
+.title{
+font-size:clamp(20px,5.4vw,44px);
+letter-spacing:.08em;
+color:#fff;
+text-shadow: 0 4px 0 #f3a9c8, 0 8px 16px rgba(243,169,200,0.7);
+font-weight:900;
+line-height:1.3;
+}
+.subtitle{
+font-size:clamp(12px,3.4vw,18px);
+letter-spacing:.2em;
+color:#a58bb5;
+background: rgba(255,255,255,0.8);
+padding: 4px 16px;
+border-radius: 20px;
+box-shadow: 0 4px 10px rgba(165,139,181,0.2);
+}
+/* ===== 可爱蛋糕 ===== */
+.cake-wrap{
+position: relative;
+width:clamp(130px,38vw,200px);
+aspect-ratio: 1/1.1;
+margin:clamp(4px,1.4vh,14px) 0;
+filter:drop-shadow(0 10px 20px rgba(243,169,200,0.5));
+}
+.cake{
+position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+width: 100%; height: 70%;
+}
+.plate{
+position: absolute; bottom: -5%; left: -5%; right: -5%; height: 12%;
+background: #e8e0f0; border-radius: 50%;
+box-shadow: inset 0 -4px 0 #d0c6dc;
+}
+.layer {
+position: absolute; left: 0; right: 0; border-radius: 12px 12px 6px 6px;
+box-shadow: inset 0 -6px 0 rgba(0,0,0,0.05);
+}
+.layer-3 { bottom: 10%; height: 35%; background: #ffcce0; }
+.layer-2 { bottom: 42%; height: 28%; background: #ffe6a7; left: 10%; right: 10%; }
+.layer-1 { bottom: 68%; height: 22%; background: #b8e4ff; left: 22%; right: 22%; }
+.layer::before {
+content:''; position:absolute; top:-6px; left:0; right:0; height:12px;
+background-image: radial-gradient(circle at 8px 8px, #fff 7px, transparent 7px);
+background-size: 16px 16px; background-repeat: repeat-x;
+}
+.candle {
+position: absolute; bottom: 88%; left: 50%; transform: translateX(-50%);
+width: 8px; height: 25%; background: repeating-linear-gradient(45deg, #ff8fb8 0 5px, #fff 5px 10px);
+border-radius: 4px;
+}
+.flame {
+position: absolute; bottom: 115%; left: 50%; transform: translateX(-50%);
+width: 14px; height: 22px;
+background: radial-
+gradient(ellipse at 50% 80%, #fff 0%, #ffea7c 30%, #ffb347 60%, rgba(255,100,0,0) 100%);
+border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+animation: flick .3s infinite alternate;
+}
+@keyframes flick {
+from { transform: translateX(-50%) scale(1); opacity: 0.9; }
+to { transform: translateX(-50%) scale(1.15, 1.2); opacity: 1; }
+}
+.face {
+position: absolute; top: 55%; left: 50%; transform: translateX(-50%);
+display: flex; gap: 20px;
+}
+.eye { width: 10px; height: 10px; background: #5a4a62; border-radius: 50%; }
+.blush { position: absolute; top: 8px; width: 14px; height: 8px; background: #ff9eb5; border-
+radius: 50%; opacity: 0.6; }
+.blush.l { left: -20px; }
+.blush.r { right: -20px; }
+/* ===== 祝福语 ===== */
+.bless{
+display:flex; flex-direction:column; gap:.4em;
+font-size:clamp(13px,3.6vw,19px);
+line-height:1.6;
+letter-spacing:.1em;
+color:#6b5b73;
+background: rgba(255,255,255,0.85);
+padding: 12px 24px;
+border-radius: 24px;
+box-shadow: 0 4px 15px rgba(165,139,181,0.15);
+backdrop-filter: blur(4px);
+}
+.sign{
+font-size:clamp(15px,4.2vw,24px);
+letter-spacing:.15em;
+font-weight:900;
+color:#ff6b9d;
+text-shadow: 0 2px 0 #fff, 0 4px 8px rgba(255,107,157,0.4);
+margin-top: 4px;
+}
+/* ===== 交互提示 ===== */
+.tap-overlay{
+position:fixed;inset:0;z-index:50;
+display:flex;align-items:flex-end;justify-content:center;
+padding-bottom:8vh;
+background:radial-gradient(ellipse at center,rgba(0,0,0,0) 40%,rgba(255,255,255,0.4) 100%);
+transition:opacity .6s ease;
+cursor:pointer;
+}
+.tap-overlay.hide{opacity:0;pointer-events:none;}
+.tap-card{
+display:flex;align-items:center;gap:.5em;
+padding:.7em 1.6em;
+border:2px solid #ffb8d2;
+border-radius:999px;
+background:rgba(255,255,255,0.9);
+color:#ff6b9d;
+font-size:clamp(12px,3.6vw,16px);
+font-weight:bold;
+box-shadow:0 6px 20px rgba(255,107,157,0.3);
+animation:breathe 2s ease-in-out infinite;
+}
+@keyframes breathe{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
+}
+@media (max-height:620px){
+.cake-wrap{width:clamp(100px,28vw,140px);}
+.bless{font-size:clamp(11px,3.2vw,14px); padding: 8px 16px;}
+.stage{gap:2px;}
+}
+</style>
+</head>
+<body>
+<!-- 漂浮云朵和可爱动物 -->
+<div class="bg-decor">
+<div class="cloud c1"></div>
+<div class="cloud c2"></div>
+<div class="cloud c3"></div>
+<!-- 散落在屏幕各处的可爱动物 -->
+<div class="animal a1">🐲</div>
+<div class="animal a2">🐱</div>
+<div class="animal a3">🐶</div>
+<div class="animal a4">🐼</div>
+<div class="animal a5">🦄</div>
+<div class="animal a6">🐻</div>
+<div class="animal a7">🐥</div>
+<div class="animal a8">🐨</div>
+<div class="animal a9">🐸</div>
+<div class="animal a10">🦊</div>
+</div>
+<!-- 烟花画布 -->
+<canvas id="fw"></canvas>
+<!-- 主内容 -->
+<div class="stage">
+<h1 class="title">🎊 热烈欢迎晓彤女士生辰日 🎊</h1>
+<div class="subtitle fade-up" style="animation-delay:.3s">✨ 可爱星球 · 甜蜜降临 ✨</div>
+<div class="cake-wrap fade-up" style="animation-delay:.6s">
+<div class="plate"></div>
+<div class="layer layer-3"></div>
+<div class="layer layer-2"></div>
+<div class="layer layer-1"></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="face">
+<div class="blush l"></div>
+<div class="eye"></div>
+<div class="blush r"></div>
+<div class="eye"></div>
+</div>
+</div>
+<div class="bless fade-up" style="animation-delay:.95s">
+<p>愿晓彤女士：永远可爱，永远被爱 🌟</p>
+<p>吃嘛嘛香，不长肉肉，烦恼统统退散 🍰</p>
+<p>新的一岁，温柔又闪光，有趣有盼 🎉</p>
+</div>
+<p class="sign fade-up" style="animation-delay:1.3s">晓彤女士，生日快乐呀！🎂</p>
+</div>
+<div class="tap-overlay" id="tapOverlay">
+<div class="tap-card"><span>🎵</span><span>轻触屏幕 · 开启生日歌</span></div>
+</div>
+<script>
+(function () {
+'use strict';
+/* ============================================================
+一、眼花缭乱绚烂烟花系统
+============================================================ */
+var canvas = document.getElementById('fw');
+var ctx = canvas.getContext('2d');
+var W = 0, H = 0, DPR = Math.min(window.devicePixelRatio || 1, 2);
+var rockets = [], particles = [], confetti = [];
+function resize() {
+W = canvas.clientWidth || window.innerWidth;
+H = canvas.clientHeight || window.innerHeight;
+canvas.width = Math.floor(W * DPR);
+canvas.height = Math.floor(H * DPR);
+ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+}
+window.addEventListener('resize', resize);
+window.addEventListener('orientationchange', function () { setTimeout(resize, 200); });
+resize();
+function rand(a, b) { return a + Math.random() * (b - a); }
+// 发射绚烂烟花
+function launchRocket() {
+var x = rand(W * 0.1, W * 0.9);
+var targetY = rand(H * 0.1, H * 0.5);
+var startY = H + 10;
+var g = 0.18;
+var vy = -Math.sqrt(2 * g * (startY - targetY));
+rockets.push({
+x: x, y: startY,
+vx: rand(-0.8, 0.8), vy: vy, g: g, targetY: targetY,
+// 高饱和糖果色系：红、粉、紫、蓝、黄、绿
+hue: [0, 340, 280, 200, 45, 160][Math.floor(rand(0, 6))]
+});
+}
+function explode(x, y, hue) {
+if (particles.length > 4000) return; // 允许更多粒子
+var scale = Math.min(W, H) / 430;
+scale = Math.max(0.8, Math.min(scale, 1.8));
+var count = 80 + Math.floor(Math.random() * 60); // 增加粒子数量
+for (var i = 0; i < count; i++) {
+var a = Math.random() * Math.PI * 2;
+var sp = Math.pow(Math.random(), 0.5) * 7 * scale; // 爆炸范围更大
+particles.push({
+x: x, y: y,
+vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
+life: 1, decay: 0.006 + Math.random() * 0.008,
+g: 0.03 + Math.random() * 0.03,
+size: 1.5 + Math.random() * 2.5,
+// 使用高饱和度、中亮度的颜色，让烟花在浅色背景上极其鲜艳
+color: 'hsl(' + (hue + rand(-15, 15)).toFixed(0) + ',100%,55%)'
+});
+}
+// 中心白闪增加亮度
+for (var j = 0; j < 15; j++) {
+var ang = Math.random() * Math.PI * 2;
+particles.push({
+x: x, y: y,
+vx: Math.cos(ang) * 2.5 * scale, vy: Math.sin(ang) * 2.5 * scale,
+life: 1, decay: 0.04, g: 0.02, size: 2.5,
+color: '#ffffff'
+});
+}
+}
+// 炫彩礼炮
+function launchConfetti() {
+if (confetti.length > 250) return;
+// 鲜艳的彩带颜色
+var colors = ['#ff4d4d', '#ff85c0', '#b37feb', '#69c0ff', '#ffd666', '#95de64'];
+confetti.push({
+x: rand(0, W), y: H + 10,
+vx: rand(-3, 3), vy: rand(-16, -10),
+g: 0.15, size: rand(6, 14), w: rand(4, 8),
+color: colors[Math.floor(Math.random() * colors.length)],
+rot: rand(0, Math.PI * 2), vr: rand(-0.2, 0.2),
+life: 1, decay: 0.006
+});
+}
+var lastTime = performance.now();
+var spawnAcc = 0;
+function tick(now) {
+requestAnimationFrame(tick);
+var dt = (now - lastTime) / 16.667;
+if (dt > 3) dt = 3;
+if (dt <= 0) dt = 1;
+lastTime = now;
+// 透明清除，保留轨迹
+ctx.globalCompositeOperation = 'destination-out';
+ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
+ctx.fillRect(0, 0, W, H);
+ctx.globalCompositeOperation = 'lighter';
+// 密集发射，制造眼花缭乱的效果
+spawnAcc += dt;
+if (spawnAcc >= 8) { // 频率大幅提高
+spawnAcc = 0;
+launchRocket();
+if (Math.random() < 0.7) launchRocket(); // 大概率双发
+if (Math.random() < 0.8) launchConfetti(); // 礼炮几乎不间断
+}
+// 更新火箭
+for (var i = rockets.length - 1; i >= 0; i--) {
+var r = rockets[i];
+r.vy += r.g * dt;
+r.x += r.vx * dt;
+r.y += r.vy * dt;
+ctx.beginPath();
+ctx.fillStyle = 'hsla(' + r.hue + ',100%,70%,0.9)';
+ctx.arc(r.x, r.y, 2.5, 0, 7);
+ctx.fill();
+if (r.vy >= 0 || r.y <= r.targetY) {
+explode(r.x, r.y, r.hue);
+rockets.splice(i, 1);
+}
+}
+// 更新烟花粒子
+for (var k = particles.length - 1; k >= 0; k--) {
+var p = particles[k];
+p.vx *= (1 - 0.02 * dt);
+p.vy *= (1 - 0.02 * dt);
+p.vy += p.g * dt;
+p.x += p.vx * dt;
+p.y += p.vy * dt;
+p.life -= p.decay * dt;
+if (p.life <= 0 || p.y > H + 80 || p.x < -80 || p.x > W + 80) {
+particles.splice(k, 1); continue;
+}
+ctx.globalAlpha = Math.max(0, p.life);
+ctx.fillStyle = p.color;
+ctx.beginPath();
+ctx.arc(p.x, p.y, p.size, 0, 7);
+ctx.fill();
+}
+// 更新彩带
+for (var c = confetti.length - 1; c >= 0; c--) {
+var cf = confetti[c];
+cf.vy += cf.g * dt;
+cf.x += cf.vx * dt;
+cf.y += cf.vy * dt;
+cf.rot += cf.vr * dt;
+cf.life -= cf.decay * dt;
+if (cf.life <= 0 || cf.y > H + 50) {
+confetti.splice(c, 1); continue;
+}
+ctx.globalAlpha = cf.life;
+ctx.fillStyle = cf.color;
+ctx.save();
+ctx.translate(cf.x, cf.y);
+ctx.rotate(cf.rot);
+ctx.fillRect(-cf.size/2, -cf.w/2, cf.size, cf.w);
+ctx.restore();
+}
+ctx.globalAlpha = 1;
+}
+requestAnimationFrame(tick);
+// 开场立即炸裂
+setTimeout(launchRocket, 100);
+setTimeout(launchRocket, 200);
+setTimeout(launchConfetti, 300);
+/* ============================================================
+二、生日歌（Web Audio 实时合成）
+============================================================ */
+var NOTES = { G4:392.00, A4:440.00, B4:493.88, C5:523.25, D5:587.33, E5:659.25, F5:698.46, G5:783.99 };
+var MELODY = [
+['G4', 0.75], ['G4', 0.25], ['A4', 1], ['G4', 1], ['C5', 1], ['B4', 2],
+['G4', 0.75], ['G4', 0.25], ['A4', 1], ['G4', 1], ['D5', 1], ['C5', 2],
+['G4', 0.75], ['G4', 0.25], ['G5', 1], ['E5', 1], ['C5', 1], ['B4', 1], ['A4', 2],
+['F5', 0.75], ['F5', 0.25], ['E5', 1], ['C5', 1], ['D5', 1], ['C5', 2],
+[null, 1.5]
+];
+var BEAT = 0.545;
+var audioCtx = null, masterGain = null, started = false, loopTimer = null;
+function playNote(freq, when, dur, vol) {
+var o1 = audioCtx.createOscillator(); o1.type = 'triangle'; o1.frequency.setValueAtTime(freq, when);
+var g1 = audioCtx.createGain();
+g1.gain.setValueAtTime(0.0001, when);
+g1.gain.linearRampToValueAtTime(vol, when + 0.02);
+g1.gain.exponentialRampToValueAtTime(0.0001, when + dur);
+o1.connect(g1); g1.connect(masterGain); o1.start(when); o1.stop(when + dur + 0.06);
+var o2 = audioCtx.createOscillator(); o2.type = 'sine'; o2.frequency.setValueAtTime(freq * 2, when);
+var g2 = audioCtx.createGain();
+g2.gain.setValueAtTime(0.0001, when);
+g2.gain.linearRampToValueAtTime(vol * 0.25, when + 0.02);
+g2.gain.exponentialRampToValueAtTime(0.0001, when + dur * 0.7);
+o2.connect(g2); g2.connect(masterGain); o2.start(when); o2.stop(when + dur + 0.06);
+}
+function scheduleSong() {
+var t = audioCtx.currentTime + 0.15;
+for (var i = 0; i < MELODY.length; i++) {
+var name = MELODY[i][0], beats = MELODY[i][1], dur = beats * BEAT;
+if (name) playNote(NOTES[name], t, dur * 0.92, 0.25);
+t += dur;
+}
+return t;
+}
+function loopSong() {
+if (!started) return;
+var end = scheduleSong();
+var wait = Math.max(1000, (end - audioCtx.currentTime + 2.5) * 1000);
+loopTimer = setTimeout(loopSong, wait);
+}
+var overlay = document.getElementById('tapOverlay');
+function hideOverlay() {
+if (!overlay || overlay.classList.contains('hide')) return;
+overlay.classList.add('hide');
+setTimeout(function () { overlay.style.display = 'none'; }, 650);
+}
+function boot() {
+if (started) return;
+var AC = window.AudioContext || window.webkitAudioContext;
+if (!AC) { hideOverlay(); return; }
+try {
+if (!audioCtx) {
+audioCtx = new AC();
+masterGain = audioCtx.createGain();
+masterGain.gain.value = 0.4;
+masterGain.connect(audioCtx.destination);
+}
+var p = audioCtx.resume();
+Promise.resolve(p).then(function () {
+if (audioCtx.state === 'running' && !started) {
+started = true; hideOverlay(); loopSong();
+}
+}).catch(function () {});
+} catch (e) {}
+}
+window.addEventListener('load', boot);
+document.addEventListener('DOMContentLoaded', function () { setTimeout(boot, 120); });
+document.addEventListener('click', boot);
+document.addEventListener('touchstart', boot, { passive: true });
+document.addEventListener('keydown', boot);
+document.addEventListener('visibilitychange', function () {
+if (!document.hidden && audioCtx && audioCtx.state === 'suspended' && started) {
+audioCtx.resume();
+}
+});
+})();
+</script>
+</body>
+</html>
